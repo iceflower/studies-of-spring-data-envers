@@ -3,8 +3,11 @@ spring:
     show-sql: false
     hibernate:
       ddl-auto: create-drop
+      # ddl-auto: update
+    database-platform: org.hibernate.dialect.MariaDBDialect
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:testdb;MODE=MYSQL;
+    # url: jdbc:h2:file:~/h2db/data/example/example01;FILE_LOCK=NO;MODE=MYSQL;
     driverClassName: org.h2.Driver
     username: sa
     password: password
